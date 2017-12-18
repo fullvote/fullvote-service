@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+- '8'
+notifications:
+  email: false
+script:
+- npm run ci
+deploy:
+  provider: lambda
+  function_name: "getWinner"
+  region: "us-east-1"
+  role: "arn:aws:iam::589245859129:role/service-role/myRole"
+  runtime: "nodejs6.10"
+  handler_name: "index.handler"
+  access_key_id: "AKIAI6U3N2XQX3CRCQSQ"
+  secret_access_key:
+    secure: P5SsufQuV2bvPdh5+hcvDcALn9MGy1LE1jrbB3U38PfABnp/97Smxz23dIrw+TTaiXylj0W3u02jPs0MBaf0kPuuFipjlc8WP5EVKjwuZ8kQYhu+r03MxZhSosa1FJFMtYYagFP0WklxLGnYNr6YH8I1njQWjRxPec4Te+xGZc5hWNMtv5pEmO9Qx5uwlu1eoKTSgxUUyjQgTcx8+tl7AK6uH/p4JaxSFkP0i4ey256uVUh/1WuHNtuh3FMY50Iyhs37W1yaG1SqPWtxxok0NhANAyYYCLDwe7QTw8R/RaOPM852/fc4u8Xgi0+mtpC0Qtx4K+9bXQXSXY+vUt8dT4kv/hifWleWX5PHe+0RTgZDG4DvIMHbaaO62j+lVxQr01cyhHUMqna31KZfssF8i3jDr2/6AFLwKsNDchNz0j3wXw/qq8H++I9PiqcqpIPiVpMNKXr62rOfZJ19xiIb1sYwXRjnQVDoFiAjjD7fOBgCTSTaoqyorOU7vLo1YqF17u98TT4lhZuU9OMS1oxcyvWpIWKIR9e3YIxMCM0feZ09h26oFZb2W1yF5Mm7ApDrC0C6rIkZlGXZe8m6P5zVm26UjB/HOyq1KLFocvz+mUSxBi26Q1UeCLh+m4+jrOxf7/r63Q51egK9VB/XaqLqPQqVKWtudFcUfLPuUlT9vSo=

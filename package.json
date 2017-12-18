@@ -1,0 +1,28 @@
+{
+  "name": "fullvote-service",
+  "author": "Craig Martin",
+  "license": "MIT",
+  "version": "0.1.0",
+  "description": "A voting algorithm for good",
+  "main": "",
+  "scripts": {
+    "ci": "npm run test",
+    "test": "npm run test:format",
+    "test:format": "prettier -l \"index.js\"",
+    "format": "prettier --write  \"index.js\"",
+    "pub": "npm run test && np"
+  },
+  "devDependencies": {
+    "np": "^2.18.3",
+    "prettier": "^1.9.2"
+  },
+  "prettier": {
+    "printWidth": 80,
+    "tabWidth": 2,
+    "singleQuote": true,
+    "trailingComma": "none"
+  },
+  "dependencies": {
+    "fullvote": "^0.2.0"
+  }
+}
