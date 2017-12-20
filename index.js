@@ -1,18 +1,22 @@
 const { getWinner } = require('fullvote');
 
 exports.handler = (event, context, callback) => {
-  const ballots = event && event.body && event.body.ballots;
+  let ballots;
+  try {
+    ballots = JSON.parse(event.body).ballots;
+  } catch (err) {}
   if (!ballots) {
     callback(null, {
       statusCode: 400,
       headers: {},
       body: JSON.stringify({
-        error: 'No ballots provided'
+        // todo, replace blah with link to json scheme
+        error: 'No ballots provided. JSON scheme should be blah.'
       }),
       isBase64Encoded: false
     });
   } else {
-    const winnerObject = getWinner(event.body.ballots);
+    const winnerObject = getWinner(ballots);
     callback(null, {
       statusCode: 200,
       headers: {},
