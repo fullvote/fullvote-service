@@ -6,14 +6,17 @@
   "description": "A voting algorithm for good",
   "main": "",
   "scripts": {
-    "ci": "npm run test",
+    "ci": "npm run test && npm run build",
+    "build": "rm -rf ./dist && mkdir -p ./dist/node_modules && cp -R node_modules/fullvote dist/node_modules/fullvote && cp index.js dist/index.js",
     "test": "npm run test:format",
     "test:format": "prettier -l \"index.js\"",
     "format": "prettier --write  \"index.js\"",
     "pub": "npm run test && np"
   },
+  "dependencies": {
+    "fullvote": "^0.2.0"
+  },
   "devDependencies": {
-    "np": "^2.18.3",
     "prettier": "^1.9.2"
   },
   "prettier": {
@@ -21,8 +24,5 @@
     "tabWidth": 2,
     "singleQuote": true,
     "trailingComma": "none"
-  },
-  "dependencies": {
-    "fullvote": "^0.2.0"
   }
 }
