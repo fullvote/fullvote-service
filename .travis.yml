@@ -3,10 +3,12 @@ node_js:
 - '8'
 notifications:
   email: false
-before_script: npx greenkeeper-lockfile-update
+before_install:
+- npm install -g greenkeeper-lockfile@1
+before_script: greenkeeper-lockfile-update
 script:
 - npm run ci
-after_script: npx greenkeeper-lockfile-upload
+after_script: greenkeeper-lockfile-upload
 deploy:
   provider: lambda
   function_name: getWinner
