@@ -12,3 +12,22 @@ Send a post to the microservice url according to _this_ json schema.
 [For now](#2) the url is [whatever](https://b6n6f4cc6d.execute-api.us-east-1.amazonaws.com/prod/getWinner).
 
 The response is json like blah. (Todo: make "blah" a link to json schema, or inline it.)
+
+
+#### Example
+
+```bash
+curl -H "Content-Type: application/json" -d '{"ballots": [["sanders", "clinton"], ["clinton"], ["sanders", "clinton"], ["trump"]]}' https://b6n6f4cc6d.execute-api.us-east-1.amazonaws.com/prod/getWinner
+```
+
+Returns
+
+```json```
+{
+  "success": true,
+  "names": ["sanders"],
+  "received": 2,
+  "total": 4,
+  "percentage": 50
+}
+```
