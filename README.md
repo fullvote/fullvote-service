@@ -22,7 +22,7 @@ curl -H "Content-Type: application/json" -d '{"ballots": [["sanders", "clinton"]
 
 Returns
 
-```json```
+```json
 {
   "success": true,
   "names": ["sanders"],
