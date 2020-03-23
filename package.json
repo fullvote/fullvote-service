@@ -17,7 +17,7 @@
     "fullvote": "^0.2.0"
   },
   "devDependencies": {
-    "prettier": "^1.9.2"
+    "prettier": "^2.0.2"
   },
   "prettier": {
     "printWidth": 80,
